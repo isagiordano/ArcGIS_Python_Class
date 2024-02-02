@@ -37,7 +37,7 @@ I love to travel and have been fortunate enough to go to a lot of cool places! H
   
 ![In portugal](https://github.com/isagiordano/ArcGIS_Python_Class/assets/157827647/0b198491-f3f1-4fce-9abb-6695eeb108d1)
   
-### Pizza Pasta Mandolino :pizza:
+## Pizza Pasta Mandolino :pizza:
 You may be wondering, _Italian major? That seems pretty random._
 You would be correct, it is pretty random. Actually- fun fact- Italian was my first language. My parents are from Italy and I am an Italian citizen. I chose to double major in Italian because I learned the language orally and wanted to get a formal education to learn the grammar/rules. 
 A lot of my family lives in Sicily, so I visit a lot. I also studied abroad there last year!
@@ -46,4 +46,4 @@ In addition to speaking Italian, I also speak Sicilian, which is an endangered l
 ![In Italy](https://github.com/isagiordano/ArcGIS_Python_Class/assets/157827647/30b8b3a5-1498-4428-80b4-08cb7ab5b485)
 
 
-## I am very excited for this course and hope it can help me a lot in the future! 
+### I am very excited for this course and hope it can help me a lot in the future! 
