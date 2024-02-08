@@ -1,0 +1,17 @@
+# 2. List overlap
+# Using these lists:
+#
+list_a = ['dog', 'cat', 'rabbit', 'hamster', 'gerbil']
+list_b = ['dog', 'hamster', 'snake']
+# Determine which items are present in both lists.
+set_a = set(list_a)
+set_b = set(list_b)
+intersected_set = set_a.intersection(set_b)
+intersected_list = list(intersected_set)
+print(intersected_list)
+
+# Determine which items do not overlap in the lists.
+difference_list_b = [x for x in set_b if x not in set_a]
+difference_list_a = [x for x in set_a if x not in set_b]
+difference_list_a.extend(difference_list_b)
+print(difference_list_a)
