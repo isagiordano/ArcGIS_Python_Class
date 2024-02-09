@@ -12,6 +12,9 @@ print(intersected_list)
 
 # Determine which items do not overlap in the lists.
 difference_list_b = [x for x in set_b if x not in set_a]
+# # make list for every variable x in set be that is not in set a
 difference_list_a = [x for x in set_a if x not in set_b]
-difference_list_a.extend(difference_list_b)
-print(difference_list_a)
+# ## make list for every variable x in set a that is not in set b
+# # combine lists
+# difference_list_a.extend(difference_list_b)
+# print(difference_list_a)
