@@ -6,7 +6,7 @@ list_b = ['dog', 'hamster', 'snake']
 
 # Determine which items are present in both lists.
 # transform lists into sets, intersect sets-
-?what is a set? sets cannot have multiple occurrences of the same element and store unordered values.
+#what is a set? sets cannot have multiple occurrences of the same element and store unordered values.
 
 set_a = set(list_a)
 set_b = set(list_b)
@@ -16,7 +16,7 @@ intersected_set = set_a.intersection(set_b)
 intersected_list = list(intersected_set)
 print(intersected_list)
 
-!! referenced from https://favtutor.com/blogs/intersection-two-lists-python
+#!! referenced from https://favtutor.com/blogs/intersection-two-lists-python
 
 # Determine which items do not overlap in the lists.
 # make difference lists between sets
@@ -29,4 +29,4 @@ difference_list_a = [x for x in set_a if x not in set_b]
 difference_list_a.extend(difference_list_b)
 print(difference_list_a)
 
-!! referenced from https://www.geeksforgeeks.org/python-difference-two-lists/
+#!! referenced from https://www.geeksforgeeks.org/python-difference-two-lists/

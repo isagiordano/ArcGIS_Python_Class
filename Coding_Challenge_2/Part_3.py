@@ -28,5 +28,5 @@ for word in words_split:
 print(word_counts)
 
 # !! referenced from my friend Cassidy (a computer science major) who helped me understand all of these commands,
-and a little bit from
+# and a little bit from
 # https://www.geeksforgeeks.org/find-frequency-of-each-word-in-a-string-in-python/

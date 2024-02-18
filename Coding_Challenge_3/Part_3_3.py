@@ -43,7 +43,6 @@ for i in range(len(years_list)):
 
     print("Year: " + str(year) + " Annual Average: " + str(annual_average))
 
-
 # # Minimum, maximum and average for the entire dataset.
 #
 # Seasonal average if Spring (March, April, May), Summer (June, July, August),
@@ -129,7 +128,7 @@ print("Winter Average: ", winter_average)
 #
 # Calculate anomaly for each value in the dataset relative to the mean for the entire time series.
 
-average = float(354.85535280324115)
+average = float(overall_average)
 
 years_list = []
 total_value = []
