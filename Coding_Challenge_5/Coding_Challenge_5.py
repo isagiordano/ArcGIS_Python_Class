@@ -3,6 +3,7 @@
 # for this challenge, I chose data from GBIS. I chose sea turtles and pinnipeds spotted around the Azores.
 
 # 1. Set up and combining my csv. I used pandas and followed a source example.
+# if this is not okay, I am totally fine with redoing it without pandas.
 import arcpy
 arcpy.env.workspace = r"C:\ArcGIS_python\class_5"
 arcpy.env.overwriteOutput = True
@@ -28,7 +29,11 @@ if os.path.exists('azores.csv'):
 
 # 2. Creating the shp layer.
 
-# assign values from csv, and save output
+# assign values from csv, and save output.
+# for some reason, latitude and longitude was saved under genus and family, but I did confirm
+# the rows corresponded to the actual extent values from the other two csvs.
+# If there is a way to fix this let me know. I attempted but was unsuccessful.
+
 in_Table = r"azores.csv"
 x_coords = "genus"
 y_coords = "family"
@@ -125,8 +130,7 @@ if arcpy.Exists(out_feature_class):
     print("Deleting intermediate files... without deleting my entire hard drive")
     arcpy.Delete_management(join_features)
     arcpy.Delete_management(target_features)
-#     motivation for myself
-print("Bella you were so brave today. bravest ever xoxo")
+
 
 # Sources:
 # # GBIF.org (29 February 2024) GBIF Occurrence Download https://doi.org/10.15468/dl.upfp6x
