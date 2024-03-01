@@ -4,6 +4,8 @@
 
 # 1. Set up and combining my csv. I used pandas and followed a source example.
 # if this is not okay, I am totally fine with redoing it without pandas.
+# I used it because I keep seeing it in use everywhere and I was super curious about it!
+
 import arcpy
 arcpy.env.workspace = r"C:\ArcGIS_python\class_5"
 arcpy.env.overwriteOutput = True
