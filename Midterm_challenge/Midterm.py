@@ -10,6 +10,9 @@
 # I used buffer, select, clip, and intersect tools to complete this analysis.
 # I used 4 datasets: Towns, Lakes, Streams, and Rivers.
 
+# The Wetlands.zip was too large to upload to the repo.
+# Here is the link:  https://drive.google.com/file/d/1NvTstkp4a7yoIPkr5vV17oGpBTG3FcVP/view?usp=drive_link
+
 
 import arcpy, os
 
