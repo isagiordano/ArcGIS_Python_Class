@@ -7,6 +7,10 @@
 # 3) provide a zip file of example data within your repo.
 # Plan the task to take an hour or two, so use one of the simpler examples from our past classes.
 
+# I chose to redo my Coding Challenge 4, where I used the Select tool and the
+# Hydro Rivers and Streams shapefile to select only first order streams.
+# For my other function, I used the Describe tool.
+
 
 # Import system modules, overwrite ensures if I rerun this code, i am not met with
 # error that file already exists.
@@ -15,7 +19,7 @@ arcpy.env.overwriteOutput = True
 base_path_directory="C:\ArcGIS_python\class_4\Coding_chall_4_data\data_chall_4"
 arcpy.env.workspace = base_path_directory
 
-### STEP 1: Using describe as a function to describe the HYDRO rivers and streams shapefile
+### Function 1: Using describe as a function to describe the HYDRO rivers and streams shapefile
 # Describing the shape type and spatial reference type.
 
 def describe_shp(input_shapefile):
@@ -36,7 +40,7 @@ describe_shp(input_shapefile)
 
 
 
-### STEP 2: Using select tool as a function to select only streams with stream order 1.
+### Function 2: Using select tool as a function to select only streams with stream order 1.
 # Defined the Select tool as a function called "select features"
 
 def select_features(in_features, out_feature_class, where_clause):
