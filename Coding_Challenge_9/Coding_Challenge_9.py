@@ -1,6 +1,35 @@
+##### CODING CHALLENGE  9
+
+
+# As always, starting with importing arcpy, os, and setting my workspace
+
+import arcpy, os
+base_path_directory = r"C:\ArcGIS_python\class_9"
+arcpy.env.workspace = base_path_directory
+arcpy.env.overwriteOutput = True
+
+
+# STEP 1: setting variables that I will use later to create my shapefiles.
+
+spatial_ref = 4326
+input_shp = os.path.join(base_path_directory, 'RI_Forest_Health_Works_Project%3A_Points_All_Invasives.shp')
+out_path = arcpy.env.workspace
+out_name_photo = "records_w_photo.shp"
+out_name_no_photo = "records_w_no_photo.shp"
+geometry_type = "POINT"
+template = "#"
+has_m = "DISABLED"
+has_z = "DISABLED"
+
+# not entirely sure if I needed to set template, has_m, or has_z, but it was
+# in Step 4, and better safe than sorry!
+
+
+# STEP 2
+# First, I will use arcpy.da.SearchCursor to find/count each record that has a photo
 # I noticed on ArcGIS, the PHOTO description was within the Other field, so I used that.
-# There were multiple other fields labelled "PhotoN," "PhotoS," etc., but the "photo" option
-# with a value of u most closely matched the assignment description.
+# There were multiple other fields labelled "PhotoN," "PhotoS," etc., but the PHOTO option
+# within the Other field most closely matched the assignment description.
 # I also felt no need to print every row that had a PHOTO as it printed too many results
 # and felt unnecessary when the goal is simply to count the records
 
@@ -18,6 +47,7 @@ print("There are " + str(count_photo) + " records that have a photo.")
 # I had initially used != to mean "does not equal" but it was not working.
 # After a little digging, I found that <> is another option, and it seems to
 # be working just fine!
+# source: https://www.digitalocean.com/community/tutorials/python-not-equal-operator
 
 field = ['photo']
 expression = arcpy.AddFieldDelimiters(input_shp, "photo") + " <> 'y'"
@@ -49,7 +79,7 @@ print("There are " + str(len(species_list)) + " unique species.")
 # I used the select tool to create two shapefiles- one with photos, one without.
 # The input features were my input_shp, the output shapefile is located in the base
 # directory with the name I specified earlier, and the where clause is either
-# photo=y or photo<> y.I had to use <> again.
+# Other=Photo or Other<> Photo.I had to use <> again.
 # I double checked this process worked by ensuring that it had the same point count in ArcGIS.
 
 print("Creating a shapefile including records with photos...")
@@ -57,5 +87,4 @@ arcpy.analysis.Select(input_shp, os.path.join(out_path, out_name_photo), "photo 
 
 print("Creating a shapefile including records without photos...")
 arcpy.analysis.Select(input_shp, os.path.join(out_path, out_name_no_photo), "photo <> 'y'")
-
 
