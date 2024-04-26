@@ -34,8 +34,8 @@ def BandsCalc(input_raster_b4, input_raster_b5, output_raster):
     arcpy.CheckOutExtension("spatial")
     arcpy.CheckOutExtension("ImageAnalyst")
 
-    raster_b4 = arcpy.Raster(os.path.join(outputDirectory, input_raster_b4))
-    raster_b5 = arcpy.Raster(os.path.join(outputDirectory, input_raster_b5))
+    raster_b4 = arcpy.Raster(input_raster_b4))
+    raster_b5 = arcpy.Raster(input_raster_b5))
     output_raster_path = os.path.join(outputDirectory, output_raster)
 
     ndvi =  ((raster_b5)-(raster_b4))/((raster_b5)+(raster_b4))
