@@ -1,4 +1,4 @@
- Our coding challenge this week that improves our practice with rasters from Week 10.
+ # Our coding challenge this week that improves our practice with rasters from Week 10.
 #
 # Task 1 - Use what you have learned to process the Landsat files provided, this time,
 # you know you are interested in the NVDI index which will use Bands 4 (red, aka vis) and
