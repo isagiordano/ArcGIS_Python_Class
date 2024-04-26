@@ -22,7 +22,6 @@
 
 import os, arcpy
 arcpy.env.overwriteOutput = True
-listMonth = ["02","04","05","07","10","11"]
 outputDirectory = r"C:\ArcGIS_python\class_10\LANDSAT_DATA"
 if not os.path.exists(outputDirectory):
     os.mkdir(outputDirectory)
@@ -30,14 +29,18 @@ if not os.path.exists(outputDirectory):
 import arcpy
 
 def BandsCalc(input_raster_b4, input_raster_b5, output_raster):
-    # Check out any necessary licenses.
+ 
     arcpy.CheckOutExtension("spatial")
     arcpy.CheckOutExtension("ImageAnalyst")
-
+ 
+# definining the variables i am going to use for my ndvi function
+ # doing arcpy.raster because thats what my model did 
+ 
     raster_b4 = arcpy.Raster(input_raster_b4))
     raster_b5 = arcpy.Raster(input_raster_b5))
     output_raster_path = os.path.join(outputDirectory, output_raster)
 
+ # the equation
     ndvi =  ((raster_b5)-(raster_b4))/((raster_b5)+(raster_b4))
     ndvi.save(output_raster_path)
 
@@ -51,7 +54,34 @@ input_raster_b5 = ["LC08_L1TP_012031_20150201_20170301_01_T1_B5.tif", "LC08_L1TP
                         "LC08_L1TP_012031_20151015_20170225_01_T1_B5.tif",
                         "LC08_L1TP_012031_20151116_20170225_01_T1_B5.tif"]
 
-output_raster = ["NVDS_2.tif", "NVDS_4.tif", "NVDS_5.tif","NVDS_7.tif", "NVDS_10.tif", "NVDS_11.tif"]
+output_raster = ["NVDI_2.tif", "NVDI_4.tif", "NVDI_5.tif","NVDI_7.tif", "NVDI_10.tif", "NVDI_11.tif"]
+
+# so i was getting an error that LC08_L1TP_012031_20150201_20170301_01_T1_B4.tif did not exist or was not supported
+# it does in fact exist, i triple checked that arcpro wasnt open, and i redownloaded the zip file in case it was corrupted
+# then i was concerned that maybe it was because the files were within folders inside my workspace/output directory
+# so i tried something new 
 
 
+# then, i was playing around with this..
 
+listMonth = ["02","04","05","07","10","11"]
+for month in listMonth:
+    month_directory = os.path.join(outputDirectory, "2015" + month)
+
+    if os.path.exists(month_directory):
+
+        files = os.listdir(month_directory)
+
+        b4_files = [file for file in files if "B4.tif" in file]
+        b5_files = [file for file in files if "B5.tif" in file]
+
+        files_NDVI= [b4_files, b5_files]
+        for b4_file, b5_file in files_NDVI:
+
+            output_raster_name = "NVDI_" + month + ".tif"
+
+            BandsCalc(b4_file, b5_file, output_raster_name)
+
+
+# but i was getting an error for line 74: ValueError: too many values to unpack (expected 2)
+# currently trying to figure out how to fix. lol
