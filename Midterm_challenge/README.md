@@ -5,3 +5,6 @@ It was recommended to potentially redo a past GIS project with Arcpy, so that is
 
 In this script, large water bodies (higher order streams and lakes) are buffered 200 feet, and smaller water bodies (wetlands and first order streams) are buffered 100 feet. For the same of visualization in this project, I chose to also clip the features and only create buffer zones for Narragansett.
 Therefore, this project will visualize buffer zones of large and small water bodies in the town of Narragansett.
+
+I used buffer, select, clip, and intersect tools to complete this analysis.
+I used 4 datasets: Towns, Lakes, Streams, and Rivers.
