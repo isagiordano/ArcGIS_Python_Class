@@ -10,3 +10,5 @@ I iterated over a list of directories corresponding
 to different months to select raster files containing b4 and b5.
 My output was a tif file for each month showing the NDVI.
 
+I chose to visualize the area around Narragansett and South Kingston, as this is where I have spent my time here in Rhode Island and I wanted to see what the NDVI looked like around the coast. I chose the April NDVI honestly because that's when my birthday is and it's my favorite month.
+
