@@ -42,7 +42,7 @@ Upon completion, the following messages will be provided:
 - a message stating that lakes > 1 acre have been selected, or were unable to be selected
 - a message stating if the clip was successfully executed
 - a message stating how many lakes are in the new shapefile.
-- 
+  
 These messages are useful to the user if they are running into problems. They can see if tools were or were not executed correctly to track the issue.
 
 ## Tool 3: Buffer
