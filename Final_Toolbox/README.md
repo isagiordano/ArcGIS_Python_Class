@@ -11,7 +11,8 @@ The user will add a "Towns" shapefile which countains the feature "COUNTY." The 
 ### Parameters
 This tool requires 2 inputs and 1 output. 
 
-**Input 1:** This should be the Towns shapefile containing a COUNTY feature. The dataset type is Feature class.  
+**Input 1:** This should be the Towns shapefile containing a COUNTY feature. The dataset type is Feature class. 
+
 **Input 2:** This is the name of the county chosen. The dataset type is String. 
 
 **Output:** The output is a shapefile containing the towns in the selected county. The dataset type is Feature class.
@@ -30,6 +31,7 @@ The user will use the previously generated County shapefile, along with an added
 This tool requires 2 inputs and 1 output. It is important to use the correct shapefile for each input.
 
 **Input 1:** This should be the Lakes shapefile. The dataset type is Feature class. 
+
 **Input 2:** This is the shapefile of the county generated with the last tool. The dataset type is Feature class. 
 
 **Output:** The output is a shapefile containing the lakes larger than 1 acre in the selected county. The dataset type is Feature class.
@@ -54,6 +56,7 @@ The user will use the Lakes in County shapefile generated previously. They will 
 This tool requires 2 inputs and 1 output. It is important to use the correct shapefile for each input.
 
 **Input 1:** This should be the Lakes in the county shapefile. The dataset type is Feature class. 
+
 **Input 2:** This is the number of feet you want to buffer. The recommended buffer distance for large water bodies like lakes is 100 feet. The dataset type is Long. 
 
 **Output:** The output is a shapefile containing the buffer at a distance of the user's choosing. The dataset type is Feature Class.
