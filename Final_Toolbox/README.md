@@ -6,10 +6,11 @@ They are all part of one workflow (save for the last tool) in which lakes in the
 ## Tool 1: Select
 
 ### Summary
-The user will add a "Towns" shapefile which countains the feature "COUNTY." The tool will then ask the user to input a county of their choosing. The tool will select from the Towns shapefile only the county they chose, and generate an output shapefile using arcpy.Select.
+The user will add a "Towns" shapefile which countains the feature "COUNTY." The tool will then ask the user to input a county of their choosing. The tool will select the county they chose from the Towns shapefile, and generate an output shapefile using arcpy.Select.
 
 ### Parameters
 This tool requires 2 inputs and 1 output. 
+
 **Input 1:** This should be the Towns shapefile containing a COUNTY feature. The dataset type is Feature class.  
 **Input 2:** This is the name of the county chosen. The dataset type is String. 
 
@@ -27,6 +28,7 @@ The user will use the previously generated County shapefile, along with an added
 
 ### Parameters
 This tool requires 2 inputs and 1 output. It is important to use the correct shapefile for each input.
+
 **Input 1:** This should be the Lakes shapefile. The dataset type is Feature class. 
 **Input 2:** This is the shapefile of the county generated with the last tool. The dataset type is Feature class. 
 
@@ -35,10 +37,12 @@ This tool requires 2 inputs and 1 output. It is important to use the correct sha
 ### Messages
 
 Upon completion, the following messages will be provided:
+
 - a message stating if the coordinate systems of the two datasets match
 - a message stating that lakes > 1 acre have been selected, or were unable to be selected
 - a message stating if the clip was successfully executed
 - a message stating how many lakes are in the new shapefile.
+- 
 These messages are useful to the user if they are running into problems. They can see if tools were or were not executed correctly to track the issue.
 
 ## Tool 3: Buffer
@@ -48,6 +52,7 @@ The user will use the Lakes in County shapefile generated previously. They will 
 
 ### Parameters
 This tool requires 2 inputs and 1 output. It is important to use the correct shapefile for each input.
+
 **Input 1:** This should be the Lakes in the county shapefile. The dataset type is Feature class. 
 **Input 2:** This is the number of feet you want to buffer. The recommended buffer distance for large water bodies like lakes is 100 feet. The dataset type is Long. 
 
@@ -64,6 +69,7 @@ This tool is just silly. It is an arcpy.AddMessage tool that asks the user "Did 
 
 ### Parameters
 This tool requires 1 input. 
+
 **Input 1:** Takes a string that answers the question posed to the user (yes or no).
 
 ### Messages
